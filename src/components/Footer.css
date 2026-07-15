@@ -1,0 +1,115 @@
+.footer {
+  background-color: var(--color-newsletter-bg);
+  padding-bottom: var(--spacing-2xl);
+  position: relative;
+}
+
+.footer-divider {
+  border: none;
+  height: 1px;
+  background-color: var(--color-border);
+  margin-bottom: var(--spacing-3xl);
+  width: 100%;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px;
+  margin-bottom: var(--spacing-3xl);
+}
+
+.footer-column {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.footer-title {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--color-text-dark);
+  letter-spacing: -0.3px;
+}
+
+.footer-links {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.footer-links a {
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+  display: inline-block;
+  transition: transform var(--transition-fast), color var(--transition-fast);
+}
+
+.footer-links a:hover {
+  color: var(--color-text-dark);
+  transform: translateX(4px);
+}
+
+.footer-address {
+  font-style: normal;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+  line-height: 1.5;
+}
+
+.footer-address a {
+  color: var(--color-text-muted);
+  transition: color var(--transition-fast);
+}
+
+.footer-address a:hover {
+  color: var(--color-text-dark);
+}
+
+.footer-bottom {
+  border-top: 1px solid var(--color-border);
+  padding-top: var(--spacing-xl);
+  text-align: center;
+}
+
+.copyright-text {
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  color: var(--color-text-light);
+}
+
+/* --- Responsive Adjustments --- */
+
+@media (max-width: 1024px) {
+  .footer-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 48px;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer-divider {
+    margin-bottom: var(--spacing-xl);
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+
+  .footer-column {
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer-links a:hover {
+    transform: translateY(-2px); /* Vertical translation matches center alignment better */
+  }
+}
