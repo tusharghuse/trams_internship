@@ -1,0 +1,187 @@
+.offer-section {
+  position: relative;
+  background-color: var(--color-bg);
+  padding-top: var(--spacing-4xl);
+  padding-bottom: var(--spacing-4xl);
+}
+
+.offer-container {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+}
+
+/* Services Table List */
+.services-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  border-top: 1px solid var(--color-border);
+}
+
+.service-row {
+  display: grid;
+  grid-template-columns: 280px 1fr 80px;
+  border-bottom: 1px solid var(--color-border);
+  padding: 48px var(--spacing-md);
+  align-items: center;
+  transition: background-color var(--transition-normal), padding var(--transition-normal);
+  cursor: pointer;
+}
+
+.service-row:hover {
+  background-color: #FAFCFB; /* Soft minty light grey background on hover */
+  padding-left: var(--spacing-lg);
+  padding-right: var(--spacing-lg);
+}
+
+.service-tag {
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  line-height: 1.5;
+  color: var(--color-text-light);
+  font-weight: 400;
+}
+
+.service-title-container {
+  position: relative;
+}
+
+.service-title {
+  font-family: var(--font-heading);
+  font-size: 2.2rem;
+  font-weight: 500;
+  color: var(--color-text-dark);
+  letter-spacing: -0.5px;
+  line-height: 1.2;
+}
+
+/* Sticker Badge on Third Row */
+.sticker-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.sticker-badge {
+  position: absolute;
+  width: 48px;
+  height: 48px;
+  top: -16px;
+  right: -36px;
+  z-index: 5;
+  transform: rotate(-15deg);
+  filter: drop-shadow(0 4px 6px rgba(0,0,0,0.1));
+  transition: transform var(--transition-normal), filter var(--transition-normal);
+}
+
+.sticker-svg {
+  width: 100%;
+  height: 100%;
+  animation: spinSticker 20s linear infinite;
+}
+
+@keyframes spinSticker {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.service-row:hover .sticker-badge {
+  transform: scale(1.2) rotate(15deg);
+  filter: drop-shadow(0 6px 12px rgba(0,0,0,0.15));
+}
+
+/* Action Button Arrow */
+.service-action {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.arrow-btn {
+  width: 50px;
+  height: 50px;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--color-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text-light);
+  background: transparent;
+  transition: border-color var(--transition-normal), color var(--transition-normal), background-color var(--transition-normal);
+}
+
+.arrow-icon {
+  transition: transform var(--transition-normal);
+}
+
+/* Row Hover States */
+.service-row:hover .arrow-btn {
+  border-color: var(--color-text-dark);
+  color: var(--color-text-dark);
+  background-color: var(--color-accent-green);
+}
+
+.service-row:hover .arrow-icon {
+  transform: translateX(6px);
+}
+
+/* --- Responsive Adjustments --- */
+
+@media (max-width: 1024px) {
+  .service-row {
+    grid-template-columns: 200px 1fr 70px;
+    padding: 36px var(--spacing-sm);
+  }
+
+  .service-title {
+    font-size: 1.8rem;
+  }
+
+  .sticker-badge {
+    width: 40px;
+    height: 40px;
+    top: -12px;
+    right: -30px;
+  }
+}
+
+@media (max-width: 768px) {
+
+  .service-row {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    padding: 32px var(--spacing-sm);
+  }
+
+  .service-tag {
+    order: 1;
+  }
+
+  .service-title-container {
+    order: 2;
+  }
+
+  .service-action {
+    order: 3;
+    justify-content: flex-start;
+    margin-top: 12px;
+  }
+  
+  .service-row:hover {
+    padding-left: var(--spacing-sm);
+    padding-right: var(--spacing-sm);
+  }
+}
+
+@media (max-width: 480px) {
+
+  .service-title {
+    font-size: 1.5rem;
+  }
+
+  .sticker-badge {
+    width: 34px;
+    height: 34px;
+    top: -10px;
+    right: -24px;
+  }
+}
